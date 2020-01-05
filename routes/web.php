@@ -11,19 +11,19 @@
 |
 */
 
-//Route::get('/', 'TopicsController@index')->name('root');
-Route::get('/', function () {
-
-    $view = 'pages.permission_denied';
-//    $data = compact('user');
-    $to = '1559449141@qq.com';
-    $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
-    \Illuminate\Support\Facades\Mail::send($view, [], function ($message) use ($to, $subject) {
-        $message->to($to)->subject($subject);
-    });
-
-    echo 'Sended';
-});
+Route::get('/', 'TopicsController@index')->name('root');
+//Route::get('/', function () {
+//
+//    $view = 'pages.permission_denied';
+////    $data = compact('user');
+//    $to = 'lxz413@126.com';
+//    $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
+//    $a = \Illuminate\Support\Facades\Mail::send($view, [], function ($message) use ($to, $subject) {
+//        $message->to($to)->subject($subject);
+//    });
+//
+//    echo 'Sended+5';dd($a);
+//});
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
