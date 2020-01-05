@@ -46,6 +46,7 @@ class TopicReplied extends Notification implements ShouldQueue
         $url = $this->reply->topic->link(['#reply'. $this->reply->id]);
 
         return (new MailMessage)
+            ->subject('LaraBBS:话题回复')
                     ->line('你的话题有新回复哦！')
                     ->action('查看回复', $url)
                     ->line('Thank you for using our application!');
