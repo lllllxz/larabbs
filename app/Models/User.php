@@ -118,4 +118,9 @@ class User extends Authenticatable implements MustVerifyEmailContract
     }
 
 
+    public function getAvatarAttribute($avatar)
+    {
+        return empty($avatar) ? 'https://cdn.learnku.com/uploads/images/201710/14/1/ZqM7iaP4CR.png' : $avatar;
+    }
+
 }
