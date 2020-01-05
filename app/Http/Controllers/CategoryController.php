@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
         $active_users = $user->getActiveUsers();
         // 资源链接
-        $links = $link->getAllCached();
+        $links = $link->getAllCache();
         return view('topics.index', compact('topics', 'category', 'active_users', 'links'));
     }
 }
