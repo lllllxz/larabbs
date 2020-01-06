@@ -59,3 +59,14 @@ function model_plural_name($model)
     // 获取子串的复数形式，例如：传参 `user` 会得到 `users`
     return Str::plural($snake_case_name);
 }
+
+
+/**
+ * 生成短信验证码
+ * @return string
+ * @throws Exception
+ */
+function generateSmsCode()
+{
+    return str_pad(random_int(1, 999999), 6, 0, STR_PAD_LEFT);
+}

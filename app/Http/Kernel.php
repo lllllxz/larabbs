@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AcceptHeader;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -62,6 +63,7 @@ class Kernel extends HttpKernel
         // API 中间件组，应用于 routes/api.php 路由文件，
         // 在 RouteServiceProvider 中设定
         'api' => [
+            AcceptHeader::class,
 
             // 使用别名来调用中间件
             // 请见：https://learnku.com/docs/laravel/5.7/middleware#为路由分配中间件
