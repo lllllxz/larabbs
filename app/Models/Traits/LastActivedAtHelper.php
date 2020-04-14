@@ -13,9 +13,13 @@ trait LastActivedAtHelper
     protected $hash_prefix = 'larabbs_last_actived_at_';
     protected $field_prefix = 'user_';
 
+
+    /**
+     * 在redis中记录活跃时间
+     */
     public function recordLastActivedAt()
     {
-        //Redis的哈希表明，如 larabbs_last_actived_at_2020-01-05
+        //Redis的哈希表名，如 larabbs_last_actived_at_2020-01-05
         $hash = $this->getHashFromDateString(Carbon::now()->toDateString());
 
         //字段名 如  user_1
@@ -28,6 +32,9 @@ trait LastActivedAtHelper
     }
 
 
+    /**
+     * 将redis中的最后活跃时间同步到数据库
+     */
     public function syncUserAvtivedAt()
     {
         // Redis 哈希表的命名，如：larabbs_last_actived_at_2017-10-21

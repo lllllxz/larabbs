@@ -84,6 +84,12 @@ trait ApiResponse
         return $this->status($status, compact('data'), FoundationResponse::HTTP_CREATED);
     }
 
+
+    public function deleted($status = "deleted")
+    {
+        return $this->status($status, [], FoundationResponse::HTTP_NO_CONTENT);
+    }
+
     /**
      * 请求失败 400
      * @param $message

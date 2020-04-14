@@ -49,7 +49,7 @@ class ExceptionReport
     //当抛出这些异常时，可以使用我们定义的错误信息与HTTP状态码
     //可以把常见异常放在这里
     public $doReport = [
-        AuthenticationException::class => ['未授权',401],
+//        AuthenticationException::class => ['未授权',401],
         ModelNotFoundException::class => ['该模型未找到',404],
         AuthorizationException::class => ['没有此权限',403],
         ValidationException::class => [],
